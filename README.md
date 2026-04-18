@@ -1,34 +1,43 @@
 # Yejee Portfolio
 
-A Next.js portfolio landing page with a large editorial greeting and a scroll-linked cinematic panel transition.
+A personal design portfolio shaped around clarity, warmth, and focused visual storytelling.
 
-## Run
+This portfolio introduces Yejee through a simple landing moment, a concise about page, and selected project pages. The experience is intentionally minimal so the work can feel direct, confident, and easy to explore.
 
-```bash
-npm install
-npm run dev
-```
+## What This Portfolio Holds
 
-The hand asset lives at `public/hand.png`.
+- A welcoming home screen with a bold personal introduction
+- An about page for a short designer profile
+- A projects page featuring selected work
+- Individual project pages for case-study style storytelling
+- A contact footer for quick connection
 
-## Animation Notes
+## Direction
 
-The scroll interaction is implemented in `components/ScrollViewport.tsx`.
+The site is designed as a quiet portfolio system rather than a dense archive. Each page keeps the layout simple, uses generous spacing, and leaves room for future project images, process notes, and final outcomes.
 
-- The outer section is taller than the viewport.
-- The inner frame is `sticky` and remains fixed while the user scrolls through that section.
-- Framer Motion `useScroll` maps section scroll progress to transform values.
-- A black panel moves from `x: -102%` to `x: 0%`.
-- The white content shifts slightly to the right at the same time, creating a pushed-viewport feeling.
-- `useSpring` smooths the raw scroll progress to avoid jitter.
+The current project pages use placeholder case-study writing for designer work. They can later be replaced with real project details such as context, role, process, design decisions, and results.
 
-## Tweak Points
+## Current Sections
 
-Most high-level motion values live in `components/animationConfig.ts`.
+### Home
 
-- `sectionHeight`: total scroll distance for the cinematic transition.
-- `desktopPush`: how far the white content is pushed sideways.
-- `textLift`: subtle vertical parallax on the intro text.
-- `imageDrift`: subtle vertical drift on the supporting paragraph.
+A short first impression centered on Yejee’s name and personality.
 
-Hero spacing and hand alignment are in `components/Hero.tsx`.
+### About Me
+
+A brief profile introducing Yejee’s approach to design, development, and creative work.
+
+### Projects
+
+A selected work index with two project entries:
+
+- **Studio Bloom**  
+  A brand identity direction for a designer-led floral studio.
+
+- **Orbit Notes**  
+  A product design concept for calm team notes and creative workflows.
+
+## Portfolio Goal
+
+This repository is the foundation for a designer portfolio that can grow over time. It is ready for stronger project visuals, more specific case studies, refined copy, and final personal branding.
