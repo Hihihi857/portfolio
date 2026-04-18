@@ -24,7 +24,7 @@ export default function Home() {
       <section
         id="top"
         aria-labelledby="hero-title"
-        className="relative flex min-h-screen items-center overflow-hidden bg-paper px-5 py-24 md:px-8"
+        className="relative flex min-h-[72vh] items-center overflow-hidden bg-paper px-5 py-14 md:min-h-[78vh] md:px-8 md:py-16"
       >
         <motion.div
           style={{ y: titleY }}

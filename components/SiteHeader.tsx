@@ -7,7 +7,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-5 py-5 mix-blend-difference md:px-8">
+    <header className="px-5 py-5 mix-blend-difference md:px-8">
       <nav
         aria-label="Primary navigation"
         className="mx-auto flex max-w-7xl items-center justify-between text-white"
