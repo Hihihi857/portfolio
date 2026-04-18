@@ -11,6 +11,7 @@ import Image from "next/image";
 export default function Home() {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   const titleY = useTransform(
     scrollYProgress,
@@ -51,7 +52,7 @@ export default function Home() {
                 className="mb-[1.7vw] h-[17vw] w-[17vw] origin-bottom-left md:mb-[1vw] md:h-[8.2vw] md:w-[8.2vw]"
               >
                 <Image
-                  src="/hand.png"
+                  src={`${basePath}/hand.png`}
                   alt=""
                   width={246}
                   height={246}
