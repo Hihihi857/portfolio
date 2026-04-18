@@ -20,11 +20,11 @@ export default function Home() {
   const handRotate = reduceMotion ? 0 : 9;
 
   return (
-    <main>
+    <main className="flex flex-1 flex-col">
       <section
         id="top"
         aria-labelledby="hero-title"
-        className="relative flex min-h-[72vh] items-center overflow-hidden bg-paper px-5 py-14 md:min-h-[78vh] md:px-8 md:py-16"
+        className="relative flex flex-1 items-center overflow-hidden bg-paper px-5 py-14 md:px-8 md:py-16"
       >
         <motion.div
           style={{ y: titleY }}

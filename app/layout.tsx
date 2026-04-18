@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="overflow-x-hidden">
-        <SiteHeader />
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader />
+          <div className="flex flex-1 flex-col">{children}</div>
+        </div>
         <ContactFooter />
       </body>
     </html>
