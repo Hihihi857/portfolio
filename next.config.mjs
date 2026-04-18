@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const isGithubPages = process.env.GITHUB_PAGES === "true";
 const repoName = "portfolio";
+const isProduction = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   output: "export",
@@ -9,10 +9,10 @@ const nextConfig = {
     unoptimized: true,
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: isGithubPages ? `/${repoName}` : "",
+    NEXT_PUBLIC_BASE_PATH: isProduction ? `/${repoName}` : "",
   },
-  basePath: isGithubPages ? `/${repoName}` : "",
-  assetPrefix: isGithubPages ? `/${repoName}/` : "",
+  basePath: isProduction ? `/${repoName}` : "",
+  assetPrefix: isProduction ? `/${repoName}/` : "",
 };
 
 export default nextConfig;
