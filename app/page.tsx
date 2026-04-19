@@ -184,7 +184,7 @@ export default function Home() {
                   LinkedIn
                 </a>
                 <a
-                  href={`${basePath}/resume.pdf`}
+                  href={`${basePath}/resume/`}
                   className="border-b border-current/40 pb-0.5 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                 >
                   Resume

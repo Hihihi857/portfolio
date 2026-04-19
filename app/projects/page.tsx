@@ -13,25 +13,25 @@ interface Project {
 const projects: Project[] = [
   {
     id: "1",
-    title: "Studio Bloom",
+    title: "WEB DESIGN",
     description:
       "A designer project for a floral studio identity, campaign system, and refined digital presence.",
     slug: "projectone",
-    category: "Brand Identity",
+    category: "2024 UNSW Animation & Moving Image Festival",
     thumbnailClassName:
       "bg-[linear-gradient(135deg,#f7f7f4_0%,#d9e7df_48%,#111111_100%)]",
-    thumbnailText: "Studio Bloom",
+    thumbnailText: "WEB DESIGN",
   },
   {
     id: "2",
-    title: "Orbit Notes",
+    title: "ANDLE Brand Website",
     description:
       "A product design concept for calm note-taking, project organization, and team workflows.",
     slug: "projecttwo",
-    category: "Product Design",
+    category: "E-COMMERCE WEB DESIGN",
     thumbnailClassName:
       "bg-[linear-gradient(135deg,#111111_0%,#8fb7c7_52%,#f4f4f0_100%)]",
-    thumbnailText: "Orbit Notes",
+    thumbnailText: "ANDLE Brand Website",
   },
 ];
 

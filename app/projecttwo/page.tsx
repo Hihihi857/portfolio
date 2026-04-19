@@ -14,10 +14,11 @@ export default function ProjectTwoPage() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <div>
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.08em] text-graphite">
-              Product Design
+              E-COMMERCE WEB DESIGN
             </p>
             <h1 className="font-display text-5xl font-bold leading-none tracking-tight md:text-7xl">
-              Orbit Notes
+              ANDLE
+              <span className="block">Brand Website</span>
             </h1>
           </div>
 
