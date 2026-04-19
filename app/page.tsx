@@ -176,7 +176,7 @@ export default function Home() {
                 className="flex flex-col items-start gap-2 text-xs uppercase tracking-[0.08em] md:items-end"
               >
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/yejeeseo/"
                   target="_blank"
                   rel="noreferrer"
                   className="border-b border-current/40 pb-0.5 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
@@ -190,7 +190,7 @@ export default function Home() {
                   Resume
                 </a>
                 <a
-                  href="#contact"
+                  href="mailto:anniebakkr@gmail.com"
                   className="border-b border-current/40 pb-0.5 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                 >
                   Contact

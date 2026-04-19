@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectOnePage() {
   return (
@@ -29,11 +30,13 @@ export default function ProjectOnePage() {
         </div>
 
         <div className="my-14 aspect-[16/9] overflow-hidden rounded-lg bg-mist">
-          <div className="flex h-full items-center justify-center bg-[linear-gradient(135deg,#f7f7f4_0%,#d9e7df_48%,#111111_100%)] px-8 text-center">
-            <p className="max-w-xl font-display text-4xl font-bold leading-tight text-white md:text-6xl">
-              Calm identity for a growing creative studio
-            </p>
-          </div>
+          <Image
+            src="/project1.png"
+            alt="WEB DESIGN project preview"
+            width={1600}
+            height={900}
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="grid gap-10 md:grid-cols-3">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface Project {
   id: string;
@@ -6,8 +7,9 @@ interface Project {
   description: string;
   slug: string;
   category: string;
-  thumbnailClassName: string;
-  thumbnailText: string;
+  thumbnailClassName?: string;
+  thumbnailText?: string;
+  thumbnailImage?: string;
 }
 
 const projects: Project[] = [
@@ -18,9 +20,7 @@ const projects: Project[] = [
       "A designer project for a floral studio identity, campaign system, and refined digital presence.",
     slug: "projectone",
     category: "2024 UNSW Animation & Moving Image Festival",
-    thumbnailClassName:
-      "bg-[linear-gradient(135deg,#f7f7f4_0%,#d9e7df_48%,#111111_100%)]",
-    thumbnailText: "WEB DESIGN",
+    thumbnailImage: "/project1.png",
   },
   {
     id: "2",
@@ -29,9 +29,7 @@ const projects: Project[] = [
       "A product design concept for calm note-taking, project organization, and team workflows.",
     slug: "projecttwo",
     category: "E-COMMERCE WEB DESIGN",
-    thumbnailClassName:
-      "bg-[linear-gradient(135deg,#111111_0%,#8fb7c7_52%,#f4f4f0_100%)]",
-    thumbnailText: "ANDLE Brand Website",
+    thumbnailImage: "/project2.png",
   },
 ];
 
@@ -42,14 +40,24 @@ function ProjectCard({ project }: { project: Project }) {
       className="group block"
     >
       <article className="space-y-4">
-        <div
-          className={`aspect-[4/3] overflow-hidden rounded-lg ${project.thumbnailClassName}`}
-        >
-          <div className="flex h-full items-center justify-center px-8 text-center transition-transform duration-300 group-hover:scale-105">
-            <p className="font-display text-4xl font-bold leading-tight text-white md:text-5xl">
-              {project.thumbnailText}
-            </p>
-          </div>
+        <div className="aspect-[4/3] overflow-hidden rounded-lg bg-mist">
+          {project.thumbnailImage ? (
+            <Image
+              src={project.thumbnailImage}
+              alt={project.title}
+              width={1200}
+              height={900}
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          ) : (
+            <div
+              className={`flex h-full items-center justify-center px-8 text-center transition-transform duration-300 group-hover:scale-105 ${project.thumbnailClassName}`}
+            >
+              <p className="font-display text-4xl font-bold leading-tight text-white md:text-5xl">
+                {project.thumbnailText}
+              </p>
+            </div>
+          )}
         </div>
         <div className="space-y-2">
           <p className="text-xs font-bold uppercase tracking-wider text-gray-500">

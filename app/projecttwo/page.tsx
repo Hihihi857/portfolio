@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectTwoPage() {
   return (
@@ -30,11 +31,13 @@ export default function ProjectTwoPage() {
         </div>
 
         <div className="my-14 aspect-[16/9] overflow-hidden rounded-lg bg-mist">
-          <div className="flex h-full items-center justify-center bg-[linear-gradient(135deg,#111111_0%,#8fb7c7_52%,#f4f4f0_100%)] px-8 text-center">
-            <p className="max-w-xl font-display text-4xl font-bold leading-tight text-white md:text-6xl">
-              Focused tools for clear creative work
-            </p>
-          </div>
+          <Image
+            src="/project2.png"
+            alt="ANDLE Brand Website project preview"
+            width={1600}
+            height={900}
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="grid gap-10 md:grid-cols-3">
