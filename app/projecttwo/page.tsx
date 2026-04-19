@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function ProjectTwoPage() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
   return (
     <main className="min-h-screen bg-paper px-5 py-28 text-ink md:px-8">
       <article className="mx-auto max-w-5xl">
@@ -32,7 +34,7 @@ export default function ProjectTwoPage() {
 
         <div className="my-14 aspect-[16/9] overflow-hidden rounded-lg bg-mist">
           <Image
-            src="/project2.png"
+            src={`${basePath}/project2.png`}
             alt="ANDLE Brand Website project preview"
             width={1600}
             height={900}

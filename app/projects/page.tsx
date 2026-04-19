@@ -12,6 +12,8 @@ interface Project {
   thumbnailImage?: string;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const projects: Project[] = [
   {
     id: "1",
@@ -20,7 +22,7 @@ const projects: Project[] = [
       "A designer project for a floral studio identity, campaign system, and refined digital presence.",
     slug: "projectone",
     category: "2024 UNSW Animation & Moving Image Festival",
-    thumbnailImage: "/project1.png",
+    thumbnailImage: `${basePath}/project1.png`,
   },
   {
     id: "2",
@@ -29,7 +31,7 @@ const projects: Project[] = [
       "A product design concept for calm note-taking, project organization, and team workflows.",
     slug: "projecttwo",
     category: "E-COMMERCE WEB DESIGN",
-    thumbnailImage: "/project2.png",
+    thumbnailImage: `${basePath}/project2.png`,
   },
 ];
 

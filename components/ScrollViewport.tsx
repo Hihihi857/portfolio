@@ -59,7 +59,7 @@ export default function ScrollViewport() {
               className="mb-8 text-center font-display text-[12vw] font-bold leading-[0.9] tracking-[-0.02em] text-black mix-blend-difference md:text-[8vw]"
               style={{ y: headlineY }}
             >
-              Hello, I'm Yejee
+              Hello, I&apos;m Yejee
             </motion.h1>
 
             {/* Secondary headline */}

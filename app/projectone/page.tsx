@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function ProjectOnePage() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
   return (
     <main className="min-h-screen bg-paper px-5 py-28 text-ink md:px-8">
       <article className="mx-auto max-w-5xl">
@@ -31,7 +33,7 @@ export default function ProjectOnePage() {
 
         <div className="my-14 aspect-[16/9] overflow-hidden rounded-lg bg-mist">
           <Image
-            src="/project1.png"
+            src={`${basePath}/project1.png`}
             alt="WEB DESIGN project preview"
             width={1600}
             height={900}
