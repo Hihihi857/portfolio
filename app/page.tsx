@@ -66,10 +66,9 @@ export default function Home() {
   });
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-  const overlayX = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
-  const textX = useTransform(scrollYProgress, [0, 0.6], ["0%", "-120%"]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  const textColor = useTransform(scrollYProgress, [0, 0.4], ["#000000", "#ffffff"]);
+  const panelX = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
+  const textX = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const clipLeft = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const handRotate = reduceMotion ? 0 : 9;
 
   return (
@@ -83,27 +82,40 @@ export default function Home() {
         <div className="sticky top-0 flex h-screen items-center overflow-hidden px-5 py-14 md:px-8 md:py-16">
           <motion.div
             aria-hidden="true"
-            style={{ x: overlayX }}
-            className="pointer-events-none absolute inset-0 z-0 origin-left bg-black"
+            style={{ x: panelX }}
+            className="pointer-events-none absolute inset-y-0 left-0 z-0 w-[50vw] origin-left bg-black"
           />
 
-          <div className="relative z-10 mx-auto w-full max-w-7xl">
-            <div className="flex items-center justify-center">
-              <motion.div
-                style={{
-                  x: textX,
-                  opacity: textOpacity,
-                  color: textColor,
-                }}
-              >
-                <HeroTitle
-                  basePath={basePath}
-                  handRotate={handRotate}
-                  reduceMotion={reduceMotion}
-                  titleId="hero-title"
-                />
-              </motion.div>
-            </div>
+          <div className="relative z-10 mx-auto w-full max-w-7xl overflow-hidden">
+            <motion.div
+              style={{ x: textX }}
+              className="text-black"
+            >
+              <HeroTitle
+                basePath={basePath}
+                handRotate={handRotate}
+                reduceMotion={reduceMotion}
+                titleId="hero-title"
+              />
+            </motion.div>
+
+            <motion.div
+              style={{ 
+                x: textX, 
+                clipPath: useTransform(
+                  scrollYProgress,
+                  [0, 1],
+                  ["inset(0 100% 0 0)", "inset(0 50% 0 0)"]
+                )
+              }}
+              className="absolute inset-0 flex items-center justify-center text-white"
+            >
+              <HeroTitle
+                basePath={basePath}
+                handRotate={handRotate}
+                reduceMotion={reduceMotion}
+              />
+            </motion.div>
           </div>
         </div>
       </section>
