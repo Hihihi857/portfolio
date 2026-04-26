@@ -13,12 +13,8 @@ const navItems = [
 
 export function SiteHeader() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const textColor = useTransform(scrollYProgress, [0, 0.3], ["#000000", "#ffffff"]);
+  const { scrollYProgress } = useScroll();
+  const textColor = useTransform(scrollYProgress, [0.65, 0.8], ["#000000", "#ffffff"]);
   
   const pathname = usePathname();
   const isHome = pathname === "/";
