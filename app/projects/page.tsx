@@ -37,62 +37,69 @@ const projects: Project[] = [
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link
-      href={`/${project.slug}`}
-      className="group block"
-    >
-      <article className="space-y-4">
-        <div className="aspect-[4/3] overflow-hidden rounded-lg bg-mist">
-          {project.thumbnailImage ? (
-            <Image
-              src={project.thumbnailImage}
-              alt={project.title}
-              width={1200}
-              height={900}
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          ) : (
-            <div
-              className={`flex h-full items-center justify-center px-8 text-center transition-transform duration-300 group-hover:scale-105 ${project.thumbnailClassName}`}
-            >
-              <p className="font-display text-4xl font-bold leading-tight text-white md:text-5xl">
-                {project.thumbnailText}
-              </p>
-            </div>
-          )}
+    <Link href={`/${project.slug}`} className="group block w-full space-y-6">
+      {/* Image Container */}
+      <div className="relative overflow-hidden rounded-[4px] bg-white">
+        {project.thumbnailImage ? (
+          <Image
+            src={project.thumbnailImage}
+            alt={project.title}
+            width={0}
+            height={0}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ width: '100%', height: 'auto' }}
+            className="block object-contain transition-transform duration-[600ms] ease-out group-hover:scale-[1.015]"
+          />
+        ) : (
+          <div className="flex aspect-[4/3] w-full items-center justify-center bg-mist px-8 text-center transition-transform duration-[600ms] ease-out group-hover:scale-[1.015]">
+            <p className="font-display text-3xl font-bold leading-tight text-ink md:text-4xl">
+              {project.thumbnailText}
+            </p>
+          </div>
+        )}
+
+        {/* Hover Overlay */}
+        <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center bg-black/0 p-6 transition-colors duration-[400ms] ease-out group-hover:bg-black/40 md:p-8">
+          <div className="flex flex-col items-center text-center translate-y-4 opacity-0 transition-all duration-[400ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
+            <p className="mb-4 text-xs font-medium text-white/90 max-w-[85%] line-clamp-2 md:text-sm">
+              {project.description}
+            </p>
+            <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white md:text-sm">
+              View Project <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </span>
+          </div>
         </div>
-        <div className="space-y-2">
-          <p className="text-xs font-bold uppercase tracking-wider text-gray-500">
-            {project.category}
-          </p>
-          <h3 className="text-xl font-semibold leading-tight text-gray-900">
-            {project.title}
-          </h3>
-          <p className="text-sm leading-relaxed text-gray-600">
-            {project.description}
-          </p>
-        </div>
-      </article>
+      </div>
+
+      {/* Text Content */}
+      <div className="space-y-2 pt-2">
+        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-graphite">
+          {project.category}
+        </p>
+        <h3 className="font-display text-xl font-bold tracking-tight text-ink md:text-2xl">
+          {project.title}
+        </h3>
+      </div>
     </Link>
   );
 }
 
 export default function Works() {
   return (
-    <main className="pt-[160px]">
-      <section className="bg-white px-5 py-12 md:px-8">
+    <main className="pt-[160px] pb-40">
+      <section className="bg-white px-5 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8">
-            <h1 className="text-xl font-bold text-gray-900 md:text-4xl">
-              Selected Work
+          {/* SECTION TITLE */}
+          <div className="mb-16 md:mb-24">
+            <h1 className="font-display text-5xl font-bold tracking-tight text-ink md:text-7xl">
+              Selected Projects
             </h1>
           </div>
-          <div className="grid gap-12 md:grid-cols-2">
+
+          {/* 2-COLUMN GRID */}
+          <div className="grid gap-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
             {projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-              />
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>

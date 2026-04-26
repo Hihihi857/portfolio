@@ -23,7 +23,11 @@ export default function Home() {
 
   function HeroText({ className, id }: { className?: string; id?: string }) {
     return (
-      <div className={`text-center ${className}`}>
+      <motion.div
+        whileHover={{ scale: 1.025, y: -8 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        className={`inline-block text-center cursor-default pointer-events-auto ${className}`}
+      >
         <div className="mb-1 flex items-end justify-center gap-5 md:mb-2 md:gap-8">
           <p className="font-display text-[24vw] font-bold leading-[0.82] tracking-[0.065em] md:text-[12.5vw]">
             Hi
@@ -55,7 +59,7 @@ export default function Home() {
         <h1 id={id} className="whitespace-nowrap font-display text-[19vw] font-bold leading-[0.84] tracking-[0.065em] md:text-[11.8vw]">
           I&apos;m Yejee
         </h1>
-      </div>
+      </motion.div>
     );
   }
 
@@ -72,15 +76,38 @@ export default function Home() {
             style={{ width: panelWidth }}
             className="pointer-events-none absolute inset-y-0 left-0 z-20 overflow-hidden bg-black"
           >
+            <div className="absolute inset-y-0 left-0 w-screen">
+              <motion.div
+                style={{ filter: "brightness(0.92) contrast(1.08)", opacity: supportingTextOpacity, y: supportingTextY }}
+                className="absolute bottom-0 right-[11%] z-0 mix-blend-normal"
+              >
+                <div 
+                  className="relative"
+                  style={{ 
+                    maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)" 
+                  }}
+                >
+                  <Image
+                    src={`${basePath}/img1.png`}
+                    alt="Yejee portrait"
+                    width={1000}
+                    height={1400}
+                    className="h-auto max-h-[95vh] w-auto object-contain opacity-95 drop-shadow-[0_0_18px_rgba(0,0,0,0.6)]"
+                  />
+                </div>
+              </motion.div>
+            </div>
+
             <motion.div
               style={{ x: textX }}
-              className="absolute inset-y-0 left-0 flex w-screen items-center justify-center text-white"
+              className="absolute inset-y-0 left-0 flex w-screen items-center justify-center text-white z-10"
             >
               <HeroText />
             </motion.div>
           </motion.div>
 
-          <div className="relative z-10 w-screen overflow-visible">
+          <div className="relative z-10 w-screen overflow-visible pointer-events-none">
             <motion.div style={{ x: textX, opacity: textOpacity }} className="absolute inset-0 flex items-center justify-center">
               <HeroText className="text-black" id="hero-title" />
             </motion.div>
@@ -88,13 +115,17 @@ export default function Home() {
 
           <motion.div
             style={{ opacity: supportingTextOpacity, y: supportingTextY }}
-            className="absolute inset-x-0 bottom-12 z-30 flex justify-center px-5 md:bottom-20 md:px-8"
+            className="absolute inset-x-0 bottom-0 z-30 flex justify-center px-5 md:px-8"
           >
-            <div className="flex w-full max-w-7xl flex-col justify-end gap-16 md:flex-row md:items-end md:justify-between md:gap-0">
-              <div className="max-w-[480px] space-y-6">
-                <p className="font-sans text-base leading-[1.7] tracking-[-0.015em] text-white md:text-[17px]">
-                  I’m a designer focused on creating clean and thoughtful digital experiences that feel intuitive, purposeful, and easy to navigate.
-                </p>
+            <div className="relative z-10 flex w-full max-w-7xl pointer-events-none flex-col justify-end gap-16 pb-12 md:flex-row md:items-end md:justify-between md:gap-0 md:pb-20">
+              <div className="max-w-[480px] pointer-events-auto">
+                <h2 className="font-display text-white text-5xl md:text-6xl font-bold leading-[1.1] tracking-[-0.02em] mb-8">
+                  DESIGNING FOR THE WEB
+                </h2>
+                <div className="space-y-6">
+                  <p className="font-sans text-base leading-[1.7] tracking-[-0.015em] text-white md:text-[17px]">
+                    I’m a designer focused on creating clean and thoughtful digital experiences that feel intuitive, purposeful, and easy to navigate.
+                  </p>
                 <p className="font-sans text-base leading-[1.7] tracking-[-0.015em] text-white md:text-[17px]">
                   My work is grounded in strong visual communication, with careful attention to layout, typography, and spacing. I aim to balance aesthetics with usability, designing interfaces that not only look refined but also function seamlessly across different devices.
                 </p>
@@ -104,8 +135,9 @@ export default function Home() {
                 <p className="font-sans text-base leading-[1.7] tracking-[-0.015em] text-white md:text-[17px]">
                   Through my work, I strive to create digital spaces that feel considered, engaging, and genuinely useful for the people who interact with them.
                 </p>
+                </div>
               </div>
-              <div className="flex flex-col items-end gap-4">
+              <div className="flex flex-col items-end gap-4 pointer-events-auto">
                 <a
                   href="https://linkedin.com/in/yejee"
                   target="_blank"
