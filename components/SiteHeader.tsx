@@ -14,8 +14,12 @@ const navItems = [
 export function SiteHeader() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-  const textColor = useTransform(scrollYProgress, [0.65, 0.8], ["#000000", "#ffffff"]);
-  
+  const textColor = useTransform(
+    scrollYProgress,
+    [0.65, 0.8],
+    ["#000000", "#ffffff"],
+  );
+
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -30,7 +34,7 @@ export function SiteHeader() {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY <= 0) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
@@ -38,7 +42,7 @@ export function SiteHeader() {
       } else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -50,8 +54,8 @@ export function SiteHeader() {
     <motion.header
       ref={containerRef}
       className={`fixed inset-x-0 top-0 z-50 flex h-[100px] items-center px-5 md:px-8 transition-transform duration-300 ease-out ${
-        isHome 
-          ? "bg-transparent translate-y-0" 
+        isHome
+          ? "bg-transparent translate-y-0"
           : `bg-white ${isVisible ? "translate-y-0" : "-translate-y-full"}`
       }`}
     >
@@ -66,7 +70,7 @@ export function SiteHeader() {
           className="flex items-center transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
         >
           <Image
-            src="/logofinal.png"
+            src="/logo.png"
             alt="Yejee"
             width={140}
             height={50}
