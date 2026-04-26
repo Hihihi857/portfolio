@@ -5,7 +5,7 @@ export default function ResumePage() {
   const resumePath = `${basePath}/${resumeFileName}`;
 
   return (
-    <main className="min-h-screen bg-paper px-5 py-28 text-ink md:px-8">
+    <main className="min-h-screen bg-paper px-5 pt-[140px] text-ink md:px-8">
       <section className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>

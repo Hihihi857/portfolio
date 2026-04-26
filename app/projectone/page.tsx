@@ -5,7 +5,7 @@ export default function ProjectOnePage() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
-    <main className="min-h-screen bg-paper px-5 py-28 text-ink md:px-8">
+    <main className="min-h-screen bg-paper px-5 pt-[140px] text-ink md:px-8">
       <article className="mx-auto max-w-5xl">
         <Link
           href="/projects"

@@ -3,7 +3,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/aboutme", label: "About Me" },
@@ -18,14 +19,48 @@ export function SiteHeader() {
   });
 
   const textColor = useTransform(scrollYProgress, [0, 0.3], ["#000000", "#ffffff"]);
+  
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    if (isHome) {
+      setIsVisible(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY <= 0) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY, isHome]);
 
   return (
     <motion.header
       ref={containerRef}
-      className="fixed inset-x-0 top-0 z-50 flex h-[100px] items-center bg-transparent px-5 md:px-8"
+      className={`fixed inset-x-0 top-0 z-50 flex h-[100px] items-center px-5 md:px-8 transition-transform duration-300 ease-out ${
+        isHome 
+          ? "bg-transparent translate-y-0" 
+          : `bg-white ${isVisible ? "translate-y-0" : "-translate-y-full"}`
+      }`}
     >
       <motion.nav
-        style={{ color: textColor }}
+        style={{ color: isHome ? textColor : "#000000" }}
         aria-label="Primary navigation"
         className="mx-auto flex w-full max-w-7xl items-center justify-between"
       >

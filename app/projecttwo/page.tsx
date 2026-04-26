@@ -5,7 +5,7 @@ export default function ProjectTwoPage() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
-    <main className="min-h-screen bg-paper px-5 py-28 text-ink md:px-8">
+    <main className="min-h-screen bg-paper px-5 pt-[140px] text-ink md:px-8">
       <article className="mx-auto max-w-5xl">
         <Link
           href="/projects"
@@ -26,9 +26,9 @@ export default function ProjectTwoPage() {
           </div>
 
           <p className="text-lg leading-relaxed text-graphite">
-            A temporary project overview for a focused note-taking app designed
-            for creative teams. The concept emphasizes calm workflows, fast
-            capture, and clear project organization.
+            A concept-driven e-commerce website designed to communicate a calm and
+            refined brand identity. The project focuses on clean layouts, intuitive
+            navigation, and a seamless user experience.
           </p>
         </div>
 

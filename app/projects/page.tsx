@@ -28,7 +28,7 @@ const projects: Project[] = [
     id: "2",
     title: "ANDLE Brand Website",
     description:
-      "A product design concept for calm note-taking, project organization, and team workflows.",
+      "A concept-driven e-commerce website designed to communicate a calm and refined brand identity. The project focuses on clean layouts, intuitive navigation, and a seamless user experience.",
     slug: "projecttwo",
     category: "E-COMMERCE WEB DESIGN",
     thumbnailImage: `${basePath}/project2.png`,
@@ -79,7 +79,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function Works() {
   return (
-    <main className="pt-[100px]">
+    <main className="pt-[160px]">
       <section className="bg-white px-5 py-12 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8">

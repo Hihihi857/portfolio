@@ -13,7 +13,7 @@ export default function AboutMePage() {
   );
 
   return (
-    <main id="about" className="relative min-h-screen bg-paper px-5 py-24 md:px-8">
+    <main id="about" className="relative min-h-screen bg-paper px-5 pt-[140px] md:px-8">
       <motion.div
         style={{ y }}
         className="mx-auto max-w-4xl"
