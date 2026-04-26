@@ -79,11 +79,11 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function Works() {
   return (
-    <main>
-      <section className="bg-white px-5 py-20 md:px-8">
+    <main className="pt-[100px]">
+      <section className="bg-white px-5 py-12 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">
+          <div className="mb-8">
+            <h1 className="text-xl font-bold text-gray-900 md:text-4xl">
               Selected Work
             </h1>
           </div>
