@@ -67,6 +67,8 @@ export default function Home() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   const overlayX = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
+  const textX = useTransform(scrollYProgress, [0, 0.6], ["0%", "-120%"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
   const textColor = useTransform(scrollYProgress, [0, 0.4], ["#000000", "#ffffff"]);
   const handRotate = reduceMotion ? 0 : 9;
 
@@ -87,7 +89,13 @@ export default function Home() {
 
           <div className="relative z-10 mx-auto w-full max-w-7xl">
             <div className="flex items-center justify-center">
-              <motion.div style={{ color: textColor }}>
+              <motion.div
+                style={{
+                  x: textX,
+                  opacity: textOpacity,
+                  color: textColor,
+                }}
+              >
                 <HeroTitle
                   basePath={basePath}
                   handRotate={handRotate}
