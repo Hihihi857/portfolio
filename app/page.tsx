@@ -139,7 +139,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col items-end gap-4 pointer-events-auto">
                 <a
-                  href="https://linkedin.com/in/yejee"
+                  href="https://www.linkedin.com/in/yejeeseo/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block font-sans text-sm font-medium uppercase tracking-[0.1em] text-white opacity-70 transition-opacity hover:opacity-100 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-full after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300 after:ease-out"
@@ -147,13 +147,15 @@ export default function Home() {
                   LinkedIn
                 </a>
                 <a
-                  href="/resume"
+                  href={`${basePath}/YejeeSeo_Resume.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative inline-block font-sans text-sm font-medium uppercase tracking-[0.1em] text-white opacity-70 transition-opacity hover:opacity-100 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-full after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300 after:ease-out"
                 >
                   Resume
                 </a>
                 <a
-                  href="mailto:hello@yejee.design"
+                  href="mailto:yediyedi1118@gmail.com"
                   className="relative inline-block font-sans text-sm font-medium uppercase tracking-[0.1em] text-white opacity-70 transition-opacity hover:opacity-100 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-full after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300 after:ease-out"
                 >
                   Contact
