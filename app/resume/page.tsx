@@ -1,4 +1,4 @@
-const resumeFileName = "YejeeSeo_Resume.pdf";
+const resumeFileName = "YejeeSeo_Resume2.pdf";
 
 export default function ResumePage() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

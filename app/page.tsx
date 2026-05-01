@@ -147,7 +147,7 @@ export default function Home() {
                   LinkedIn
                 </a>
                 <a
-                  href={`${basePath}/YejeeSeo_Resume.pdf`}
+                  href={`${basePath}/YejeeSeo_Resume2.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block font-sans text-sm font-medium uppercase tracking-[0.1em] text-white opacity-70 transition-opacity hover:opacity-100 after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-full after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300 after:ease-out"
