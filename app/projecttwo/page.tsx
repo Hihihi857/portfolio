@@ -41,7 +41,9 @@ export default function ProjectTwoPage() {
               A concept-driven e-commerce website designed to communicate a calm and refined candle brand identity. The project focuses on clean layouts, intuitive navigation, product-focused imagery, and a seamless shopping experience.
             </p>
             <a
-              href="#"
+              href="https://anniebakkr.wixstudio.com/my-site-6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-full border border-ink px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-white"
             >
               View Live Website
@@ -140,7 +142,9 @@ export default function ProjectTwoPage() {
           <h2 className="font-display text-4xl font-bold tracking-tight mb-12">Explore the Project</h2>
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <a
-              href="#"
+              href="https://anniebakkr.wixstudio.com/my-site-6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-ink px-10 py-4 text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-80"
             >
               View Live Website →
